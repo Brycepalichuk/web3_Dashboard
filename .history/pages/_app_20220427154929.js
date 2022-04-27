@@ -4,7 +4,7 @@ import { MoralisProvider } from "react-moralis"
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
-      <MoralisProvider appId={process.env.NEXT_PUBLIC_APPID} serverUrl={process.env.NEXT_PUBLIC_SERVER_URL}>
+      <MoralisProvider appId={"1i5SAYLfcxGELR32S3gArxgSB6jiLhHa6DdkS1mB"} serverUrl={"https://7dhrhd4rkpui.usemoralis.com:2053/server"}>
         <Component {...pageProps} />
       </MoralisProvider>
     </ChakraProvider>
