@@ -1,0 +1,26 @@
+import { userInfo } from "os";
+import { useEffect } from "react";
+import { useNFTBalances } from "react-moralis";
+import CustomContainer from "./CustomContainer";
+
+export default function Nft() {
+
+    const {getNFTBalances, data} = useNFTBalances()
+
+    useEffect(() => {
+        getNFTBalances({
+            params: {
+                chain: "rinkeby",
+                address: userInfo.get('ethAddress')
+            }
+        })
+    })
+
+    console.log(data)
+    
+    return(
+        <CustomContainer>
+            I am the NFT
+        </CustomContainer>
+    )
+}

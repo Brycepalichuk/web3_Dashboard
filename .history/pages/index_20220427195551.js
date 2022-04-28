@@ -3,12 +3,7 @@ import { Box, Flex, Text } from "@chakra-ui/layout"
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import Head from "next/head"
 import { useMoralis } from "react-moralis"
-import Balance from "../components/Balance"
 import Header from "../components/Header"
-import Nft from "../components/Nft"
-import Profile from "../components/Profile"
-import Send from "../components/Send"
-import Transactions from "../components/Transactions"
 
 export default function Home() {
   const { isAuthenticated, authenticate, user, logout, isLoggingOut } = useMoralis()
@@ -62,7 +57,7 @@ export default function Home() {
       >
         <Header user={user} logout={logout} isLoggingOut={isLoggingOut}/>
         <Box flex="1" bg="purple.100" px="44" py="20">
-          <Tabs size="lg" colorScheme="purple" align="center" variant="enclosed">
+          <Tabs>
             <TabList>
               <Tab fontWeight="bold">Profile</Tab>
               <Tab fontWeight="bold">Balance</Tab>
@@ -71,21 +66,11 @@ export default function Home() {
               <Tab fontWeight="bold">Send ETH</Tab>
             </TabList>
             <TabPanels>
-              <TabPanel>
-                <Profile user={user} />
-              </TabPanel>
-              <TabPanel>
-                <Balance user={user} />
-              </TabPanel>
-              <TabPanel>
-                <Transactions user={user} />
-              </TabPanel>
-              <TabPanel>
-                <Nft user={user}/>
-              </TabPanel>
-              <TabPanel>
-                <Send />
-              </TabPanel>
+              <TabPanel>Profile</TabPanel>
+              <TabPanel>Balance</TabPanel>
+              <TabPanel>Transactions</TabPanel>
+              <TabPanel>NFTs</TabPanel>
+              <TabPanel>Send ETH</TabPanel>
             </TabPanels>
           </Tabs>
         </Box>

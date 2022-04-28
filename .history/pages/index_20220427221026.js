@@ -7,7 +7,6 @@ import Balance from "../components/Balance"
 import Header from "../components/Header"
 import Nft from "../components/Nft"
 import Profile from "../components/Profile"
-import Send from "../components/Send"
 import Transactions from "../components/Transactions"
 
 export default function Home() {
@@ -83,9 +82,7 @@ export default function Home() {
               <TabPanel>
                 <Nft user={user}/>
               </TabPanel>
-              <TabPanel>
-                <Send />
-              </TabPanel>
+              <TabPanel>Send ETH</TabPanel>
             </TabPanels>
           </Tabs>
         </Box>
